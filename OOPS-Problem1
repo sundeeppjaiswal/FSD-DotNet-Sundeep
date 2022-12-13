@@ -1,0 +1,60 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace OOPs
+{
+
+    public class PhotoBook
+    {
+        protected int numPages;
+
+        public PhotoBook()
+        {
+            numPages = 16;
+        }
+
+        public PhotoBook(int numPages)
+        {
+            this.numPages = numPages;
+        }
+
+        public int GetNumberPages()
+        {
+            return numPages;
+        }
+    }
+
+    public class BigPhotoBook : PhotoBook
+    {
+
+
+        public BigPhotoBook()
+        {
+            numPages = 64;
+        }
+
+        public int GetNumberPages()
+        {
+            return numPages;
+        }
+
+        public class Program
+        {
+            public static void Main()
+            {
+                int val;
+                PhotoBook pb = new PhotoBook();
+                val =  pb.GetNumberPages();
+                Console.WriteLine(val);
+                PhotoBook pb2 = new PhotoBook(32);
+               val = pb2.GetNumberPages();
+                Console.WriteLine(val);
+                PhotoBook pb3 = new BigPhotoBook();
+              val =   pb3.GetNumberPages();
+                Console.WriteLine(val);
+                Console.ReadKey();
+
+            }
+        }
+    }
+}
